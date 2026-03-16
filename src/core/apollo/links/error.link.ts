@@ -19,16 +19,13 @@ const refreshAccessToken = async (): Promise<UpdateTokenResult | null> => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       query: `
-                mutation RefreshToken($refreshToken: String!) {
-                    refreshToken(refreshToken: $refreshToken) {
-                        access_token
-                        refresh_token
-                    }
-                }
-            `,
-      variables: {
-        refreshToken,
-      },
+        mutation UpdateToken {
+          updateToken {
+            access_token
+            refresh_token
+          }
+      }
+  `,
     }),
   });
 

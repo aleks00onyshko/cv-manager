@@ -14,6 +14,9 @@ export function useAuth() {
   const router = useRouter();
 
   const handleAuthenticationSuccess = (payload: AuthResult) => {
+    document.cookie = `access_token=${payload.access_token}; path=/; SameSite=Strict`;
+    document.cookie = `refresh_token=${payload.refresh_token}; path=/; SameSite=Strict`;
+
     accessTokenVar(payload.access_token);
     refreshTokenVar(payload.refresh_token);
     currentUserVar(payload.user);

@@ -1,6 +1,6 @@
 export const ROUTES = {
   auth: {
-    login: "/auth/login",
+    login: "/authentication/login",
   },
   users: {
     root: "/users",
