@@ -7,7 +7,7 @@ export function proxy(request: NextRequest) {
   const isAuthRoute = request.nextUrl.pathname.startsWith("/auth");
 
   if (!token && !isAuthRoute) {
-    return NextResponse.redirect(new URL(ROUTES.auth.login, request.url));
+    return NextResponse.redirect(new URL(ROUTES.authentication.login, request.url));
   }
 
   if (token && isAuthRoute) {

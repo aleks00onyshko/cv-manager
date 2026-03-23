@@ -29,7 +29,7 @@ export function useAuth() {
     refreshTokenVar(null);
     currentUserVar(null);
 
-    router.push("/auth/login");
+    router.push("/authentication/login");
   };
 
   return {

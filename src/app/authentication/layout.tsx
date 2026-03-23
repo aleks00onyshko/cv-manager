@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Box } from '@mui/material';
 
-export default function AuthLayout({ children }: { children: ReactNode }) {
+export default function AuthWithoutTabsLayout({ children }: { children: ReactNode }) {
     return (
         <Box
             sx={{
@@ -9,11 +9,11 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                width: '100%',
+                px: 2,
             }}
         >
-            <Box sx={{ width: '100%', maxWidth: 420, p: 4 }}>
-                {children}
-            </Box>
+            {children}
         </Box>
     );
 }

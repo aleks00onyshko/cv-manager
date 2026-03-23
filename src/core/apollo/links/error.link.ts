@@ -47,14 +47,14 @@ const handleUnauthorizedError = (
     }),
     switchMap((result) => {
       if (!result) {
-        clearAuth(() => (window.location.href = "/auth/login"));
+        clearAuth(() => (window.location.href = "/authentication/login"));
 
         return EMPTY;
       }
       return forward(operation);
     }),
     catchError(() => {
-      clearAuth(() => (window.location.href = "/auth/login"));
+      clearAuth(() => (window.location.href = "/authentication/login"));
 
       return EMPTY;
     }),

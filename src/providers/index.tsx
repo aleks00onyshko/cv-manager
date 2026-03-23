@@ -5,9 +5,9 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { apolloClient } from "@core/apollo";
-import { theme } from "@core/config";
+import { darkTheme, lightTheme, themeVar } from "@core/config";
 import { useAppInit } from "@core/authentication";
-import { ApolloProvider } from "@apollo/client/react";
+import { ApolloProvider, useReactiveVar } from "@apollo/client/react";
 
 interface ProvidersProps {
   children: ReactNode;
@@ -16,9 +16,11 @@ interface ProvidersProps {
 export function Providers({ children }: ProvidersProps) {
   useAppInit();
 
+  const currentTheme = useReactiveVar(themeVar);
+
   return (
     <AppRouterCacheProvider>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={currentTheme === 'dark' ? darkTheme : lightTheme}>
         <CssBaseline />
         <ApolloProvider client={apolloClient}>{children}</ApolloProvider>
       </ThemeProvider>

@@ -1,2 +1,2 @@
-export { theme } from "./theme";
+export { darkTheme, lightTheme, themeVar } from "./theme";
 export { ROUTES } from "./routes";
