@@ -6,7 +6,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { apolloClient } from "@core/apollo";
 import { darkTheme, lightTheme, themeVar } from "@core/config";
-import { useAppInit } from "@core/authentication";
 import { ApolloProvider, useReactiveVar } from "@apollo/client/react";
 
 interface ProvidersProps {
@@ -14,8 +13,6 @@ interface ProvidersProps {
 }
 
 export function Providers({ children }: ProvidersProps) {
-  useAppInit();
-
   const currentTheme = useReactiveVar(themeVar);
 
   return (

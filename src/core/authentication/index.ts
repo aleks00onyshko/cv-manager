@@ -5,4 +5,4 @@ export {
   clearAuth,
 } from "./authentication.vars";
 export { useAuth } from "./use-auth";
-export { useAppInit } from "./use-app-init";
+export { initializeClientState } from "./init-client-state";
